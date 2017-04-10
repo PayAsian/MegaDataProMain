@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "063AAC215FDC4B19AF6B94C87FFB773DC67ED0A5",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "036D7563A863B50DC226EB430B5005E31BA31C8A" : 9223372036854775807,
+    "063AAC215FDC4B19AF6B94C87FFB773DC67ED0A5" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "19C37684-834D-4C5B-9EAD-4D1DACA2A4EC",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "036D7563A863B50DC226EB430B5005E31BA31C8A" : "..\/Documents\/C++\/FirstProjectForCPlusPlus",
+    "063AAC215FDC4B19AF6B94C87FFB773DC67ED0A5" : "MegaDataProject-master\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MegaData",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MegaData.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/PayAsian\/FirstProjectForCPlusPlus.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "036D7563A863B50DC226EB430B5005E31BA31C8A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/PayAsian\/MegaDataProject-master.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "063AAC215FDC4B19AF6B94C87FFB773DC67ED0A5"
+    }
+  ]
+}
