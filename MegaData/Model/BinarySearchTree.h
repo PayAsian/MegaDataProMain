@@ -72,7 +72,7 @@ void BinarySearchTree<Type> :: postOrderTraversal()
 }
 
 template<class Type>
-int BinarySearchTree<Type> :: calculateSize(BinarySearchTreeNode<Type> * star)
+int BinarySearchTree<Type> :: calculateSize(BinarySearchTreeNode<Type> * start)
 {
     return -99;
 }
