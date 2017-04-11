@@ -51,6 +51,7 @@
 		19B5626B1E675D3A00D2D2EF /* DoublyLinkedList.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = DoublyLinkedList.hpp; path = Model/DoublyLinkedList.hpp; sourceTree = "<group>"; };
 		19B5626C1E67681C00D2D2EF /* CircularList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CircularList.h; path = Model/CircularList.h; sourceTree = "<group>"; };
 		19BB1F601E54E3A0009EA676 /* Array.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Array.h; path = Model/Array.h; sourceTree = "<group>"; };
+		19BC3B8A1E9D537E005DBA73 /* BinarySearchTreeNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BinarySearchTreeNode.h; path = Model/BinarySearchTreeNode.h; sourceTree = "<group>"; };
 		19F74AFB1E8C2B3C00ACD4A4 /* CrimeData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CrimeData.cpp; path = Model/CrimeData.cpp; sourceTree = "<group>"; };
 		19F74AFC1E8C2B3C00ACD4A4 /* CrimeData.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = CrimeData.hpp; path = Model/CrimeData.hpp; sourceTree = "<group>"; };
 		19F74AFE1E8C3D8900ACD4A4 /* FileController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FileController.cpp; path = Controller/FileController.cpp; sourceTree = "<group>"; };
@@ -120,6 +121,7 @@
 				1922DBB31E6A04B000F8B73B /* Queue.h */,
 				198FD6901E6F4ACC00BA93FC /* Stack.h */,
 				1994AF301E71D8100024103D /* DoubleList.h */,
+				19BC3B8A1E9D537E005DBA73 /* BinarySearchTreeNode.h */,
 				19F74AFA1E8C2AB700ACD4A4 /* ItemsToSave */,
 			);
 			name = Model;
