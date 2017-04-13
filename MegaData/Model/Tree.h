@@ -36,7 +36,7 @@ public:
     void setHeight(int height);
     void setSize(int size);
     void setComplete(bool complete);
-    void setBalancd(bool balanced);
+    void setBalanced(bool balanced);
 };
 
 template<class Type>
