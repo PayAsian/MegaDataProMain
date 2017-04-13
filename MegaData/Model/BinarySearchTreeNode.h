@@ -33,6 +33,18 @@ public:
 }
 
 template<class Type>
+BinarySearchTreeNode<Type> :: BinarySearchTreeNode()
+{
+    
+}
+
+template<class Type>
+BinarySearchTreeNode<Type> :: BinarySearchTreeNode(Type data)
+{
+    
+}
+
+template<class Type>
 BinarySearchTreeNode<Type> :: BinarySearchTreeNod() : Node<Type>()
 {
     

@@ -19,6 +19,9 @@
 #include "../Model/Timer.hpp"
 #include "../Model/DoubleList.h"
 #include "../Model/BiDirectionalNode.h"
+#include "../Model/BinarySearchTree.h"
+#include "../Model/BinarySearchTreeNode.h"
+#include "../Model/Tree.h"
 #include <string>
 
 using namespace std;
