@@ -11,6 +11,7 @@
 
 #include "Tree.h"
 #include "BinarySearchTreeNode.h"
+#include <iostream>
 
 template<class Type>
 class BinarySerachTree : public Tree<Type>
@@ -23,6 +24,8 @@ private:
     void preOrderTraversal(BinarySearchTreeNode<Type> * preStart);
     void postOrderTraversal(BiarySearchTreeNode<Type> * postStart);
     
+    void removedNode(BinarySearchTreeNode<Type> * & removeMe);
+    
 public:
     BinarySearchTree();
     ~BinarySearchTree();
@@ -33,6 +36,13 @@ public:
     void inOrderTraversal();
     void preOrderTraversal();
     void postOrderTraversal();
+    
+    
+    void printToFile();
+    
+    bool contains(Type value);
+    void insert(Type itemToInsert);
+    void remove(Type value);
 };
 
 template<class Type>
