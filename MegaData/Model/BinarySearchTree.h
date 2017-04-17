@@ -16,10 +16,14 @@
 template<class Type>
 class BinarySearchTree : public Tree<Type>
 {
-private:
+protected:
     BinarySearchTreeNode<Type> * root;
     
     int calculateSize(BinarySearchTreeNode<Type> * root);
+    int calculateHeight(BinarySearchTreeNode<Type> * root);
+    bool isBalanced(BinarySearchTreeNode<Type> * root);
+    bool isComplete(BinarySearchTreeNode<Type> * root);
+    
     void inOrderTraversal(BinarySearchTreeNode<Type> * inStart);
     void preOrderTraversal(BinarySearchTreeNode<Type> * preStart);
     void postOrderTraversal(BinarySearchTreeNode<Type> * postStart);
