@@ -143,6 +143,61 @@ void BinarySearchTree<Type> :: postOrderTraversal(BinarySearchTreeNode<Type> * p
 }
 
 template<class Type>
+bool BinarySearchTree<Type> :: isBalanced(BinarySearchTreeNode<Type> * start)
+{
+    int leftHeight = 0;
+    int rightHeight = 0;
+    
+    if(start == nullptr)
+    {
+        return true;
+    }
+    
+    leftHeight = calculateHeight(start->getLeftChild());
+    rightHeight = calculateHeight(start->getRightChild());
+    
+    int heightDifference = abs(leftHeight-rightHeight);
+    bool leftBalanced = isBalanced(start->getLeftChild());
+    bool rightBalanced = isBalanced(start->getRightChild());
+    
+    if(heightDifference <= 1 && leftBalanced && rightBalanced)
+    {
+        return true;
+    }
+    
+    return false;
+}
+
+template<class Type>
+int BinarySearchTree<Type> :: calculateHeight(BinarySearchTree<Type> * start)
+{
+    if(start == nullptr)
+    {
+        return 0;
+    }
+    else
+    {
+        return 1 + max(calculateHeight(start->getLeftChild()), calculateHeight(start->getRightChild()));
+    }
+}
+
+template<class Type>
+int BinarySearchTree<Type> :: calculateSize(BinarySearchTreeNode<Type> * start)
+{
+    int count = 1;
+    if(start == nullptr)
+    {
+        return 0;
+    }
+    else
+    {
+        count += calculateSize(start->getLeftChild());
+        count += calculateSize(start->getRightChild());
+        return count;
+    }
+}
+
+template<class Type>
 bool BinarySearchTree<Type> :: contains(Type itemToFind)
 {
     BinarySearchTreeNode<Type> * current = root;
