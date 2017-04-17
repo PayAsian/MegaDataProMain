@@ -62,7 +62,7 @@ BinarySearchTree<Type> :: BinarySearchTree() : Tree<Type>()
 template<class Type>
 BinarySearchTree<Type> :: ~BinarySearchTree()
 {
-    
+    delete root;
 }
 
 template<class Type>
@@ -157,7 +157,7 @@ bool BinarySearchTree<Type> :: isBalanced(BinarySearchTreeNode<Type> * start)
     rightHeight = calculateHeight(start->getRightChild());
     
     int heightDifference = abs(leftHeight-rightHeight);
-    bool leftBalanced = isBalanced(start->getLeftChild());
+    bool leftBalancced = isBalanced(start->getLeftChild());
     bool rightBalanced = isBalanced(start->getRightChild());
     
     if(heightDifference <= 1 && leftBalanced && rightBalanced)

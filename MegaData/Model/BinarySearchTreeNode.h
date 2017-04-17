@@ -16,11 +16,12 @@ class BinarySearchTreeNode : public Node<Type>
 {
 private:
     BinarySearchTreeNode<Type> * root;
-    BinarySearchTreeNode<Type> * lefftChild;
+    BinarySearchTreeNode<Type> * leftChild;
     BinarySearchTreeNode<Type> * rightChild;
     
 public:
     BinarySearchTreeNode();
+    ~BinarySearchTreeNode();
     BinarySearchTreeNode(Type data);
     
     BinarySearchTreeNode<Type> * getRootPointer();
@@ -32,6 +33,12 @@ public:
     void setRightChild(BinarySearchTreeNode<Type> * right);
 };
 
+template<class Type>
+BinarySearchTreeNode<Type> :: ~BinarySearchTreeNode()
+{
+    delete leftChild;
+    delete rightChild;
+}
 template<class Type>
 BinarySearchTreeNode<Type> :: BinarySearchTreeNode() : Node<Type>()
 {
