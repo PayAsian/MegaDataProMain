@@ -95,11 +95,6 @@ void BinarySearchTree<Type> :: postOrderTraversal()
     postOrderTraversal(root);
 }
 
-template<class Type>
-int BinarySearchTree<Type> :: calculateSize(BinarySearchTreeNode<Type> * start)
-{
-    return -99;
-}
 
 /*
  In order traversal goesin the order Left, Root, Right
@@ -157,7 +152,7 @@ bool BinarySearchTree<Type> :: isBalanced(BinarySearchTreeNode<Type> * start)
     rightHeight = calculateHeight(start->getRightChild());
     
     int heightDifference = abs(leftHeight-rightHeight);
-    bool leftBalancced = isBalanced(start->getLeftChild());
+    bool leftBalanced = isBalanced(start->getLeftChild());
     bool rightBalanced = isBalanced(start->getRightChild());
     
     if(heightDifference <= 1 && leftBalanced && rightBalanced)
@@ -169,7 +164,7 @@ bool BinarySearchTree<Type> :: isBalanced(BinarySearchTreeNode<Type> * start)
 }
 
 template<class Type>
-int BinarySearchTree<Type> :: calculateHeight(BinarySearchTree<Type> * start)
+int BinarySearchTree<Type> :: calculateHeight(BinarySearchTreeNode<Type> * start)
 {
     if(start == nullptr)
     {
