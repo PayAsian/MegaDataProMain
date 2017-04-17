@@ -37,6 +37,7 @@ private:
     void testListTiming();
     void testFoodQueue();
     void testIntStack();
+    void testBinarySearchTreeOperations();
     
     
 public:

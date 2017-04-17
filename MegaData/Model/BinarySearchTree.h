@@ -120,7 +120,7 @@ void BinarySearchTree<Type> :: preOrderTraversal(BinarySearchTreeNode<Type> * pr
 {
     if(preStart != nullptr)
     {
-        cout << "Node Contents: " << preStart->getNodeData << endl;
+        cout << "Node Contents: " << preStart->getNodeData() << endl;
         preOrderTraversal(preStart->getLeftChild());
         preOrderTraversal(preStart->getRightChild());
     }
@@ -133,7 +133,7 @@ void BinarySearchTree<Type> :: postOrderTraversal(BinarySearchTreeNode<Type> * p
     {
         postOrderTraversal(postStart->getLeftChild());
         postOrderTraversal(postStart->getRightChild());
-        cout << "Node Contents: " << postStart->getNodeData << endl;
+        cout << "Node Contents: " << postStart->getNodeData() << endl;
     }
 }
 
