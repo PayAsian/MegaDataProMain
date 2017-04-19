@@ -35,6 +35,7 @@
 		19095CE81E4BB22100B85990 /* DataStructureController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DataStructureController.cpp; path = Controller/DataStructureController.cpp; sourceTree = "<group>"; };
 		19095CE91E4BB22100B85990 /* DataStructureController.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = DataStructureController.hpp; path = Controller/DataStructureController.hpp; sourceTree = "<group>"; };
 		19095CEC1E4BB24300B85990 /* NodeRunner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NodeRunner.cpp; path = Controller/NodeRunner.cpp; sourceTree = "<group>"; };
+		1919E4371EA7EEA9005182A9 /* AVLTree.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = AVLTree.hpp; path = Model/AVLTree.hpp; sourceTree = "<group>"; };
 		1922DBB31E6A04B000F8B73B /* Queue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Queue.h; path = Model/Queue.h; sourceTree = "<group>"; };
 		1948B5831E5CD99800CD82D5 /* List.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = List.h; path = Model/List.h; sourceTree = "<group>"; };
 		1955086C1E64C74C00B97922 /* BiDirectionalNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BiDirectionalNode.h; path = Model/BiDirectionalNode.h; sourceTree = "<group>"; };
@@ -127,6 +128,7 @@
 				19BC3B8A1E9D537E005DBA73 /* BinarySearchTreeNode.h */,
 				19BC3B8B1E9D580E005DBA73 /* Tree.h */,
 				19BC3B8C1E9D5B78005DBA73 /* BinarySearchTree.h */,
+				1919E4371EA7EEA9005182A9 /* AVLTree.hpp */,
 			);
 			name = Model;
 			sourceTree = "<group>";

@@ -89,6 +89,8 @@ public:
     bool operator < (const CrimeData & other);
     bool operator > (const CrimeData & other);
     bool operator == (const CrimeData & other);
+
+    friend ostream & operator << (ostream &outputStream, const CrimeData & outputData);
 };
 
 #endif /* CrimeData_hpp */
