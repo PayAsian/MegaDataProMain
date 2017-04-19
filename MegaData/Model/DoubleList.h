@@ -31,6 +31,12 @@ public:
 };
 
 template<class Type>
+DoubleList<Type> :: DoubleList()
+{
+    
+}
+
+template<class Type>
 int DoubleList<Type> :: indexOf(Type findMe)
 {
     int index = -1;
@@ -93,12 +99,6 @@ int DoubleList<Type> :: nextIndexOf(Type value, int position)
 
     }
     return nextIndex;
-    
-}
-
-template<class Type>
-DoubleList<Type> :: DoubleList()
-{
     
 }
 

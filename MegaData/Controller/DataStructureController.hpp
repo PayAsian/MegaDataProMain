@@ -38,6 +38,10 @@ private:
     void testFoodQueue();
     void testIntStack();
     void testBinarySearchTreeOperations();
+    void testBinarySearchData();
+    void testAVLTreeOperations();
+    void AVLData();
+    
     
     
 public:
