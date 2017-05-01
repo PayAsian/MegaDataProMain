@@ -210,12 +210,12 @@ void DataStructureController :: testAVLTreeOperations()
     cout << "Balanced should be true || 1 and is: " << numbers.isBalanced() << endl;
 }
     
-void DataContstructorController :: testAVLData()
+void DataStructureController :: testAVLData()
 {
     FileController fileData;
     Timer treeTimer;
     treeTimer.startTimer();
-    AVLTree<CrimeData> crimeTree = fileData.readCrimeDataToAVLTree("/Users/cody.henrichsen/Documents/crimes.csv");
+    AVLTree<fileData> crimeTree = fileData.readCrimeDataToAVLTree("/Users/cody.henrichsen/Documents/crimes.csv");
     treeTimer.stopTimer();
     
     int count = crimeTree.getSize();
@@ -314,7 +314,7 @@ CrimeData :: CrimeData(string currentCSVLine)
     this->setAllRobbery(stoi(tempAllRobbery));
     this->setYear(stoi(tempYear));
 }
-CrimeData stream operator overload
+CrimeData stream; operator overload
 CrimeData.hpp
 friend ostream & operator << (ostream &outputStream, const CrimeData & outputData);
 CrimeData.cpp
