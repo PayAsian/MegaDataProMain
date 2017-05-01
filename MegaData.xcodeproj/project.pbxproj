@@ -41,6 +41,7 @@
 		1955086C1E64C74C00B97922 /* BiDirectionalNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BiDirectionalNode.h; path = Model/BiDirectionalNode.h; sourceTree = "<group>"; };
 		198FD6901E6F4ACC00BA93FC /* Stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Stack.h; path = Model/Stack.h; sourceTree = "<group>"; };
 		19947A1E1EB7B24700973BEB /* HashTable.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = HashTable.hpp; path = Model/HashTable.hpp; sourceTree = "<group>"; };
+		19947A211EB7B50D00973BEB /* HashNode.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = HashNode.hpp; path = Model/HashNode.hpp; sourceTree = "<group>"; };
 		1994AF301E71D8100024103D /* DoubleList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DoubleList.h; path = Model/DoubleList.h; sourceTree = "<group>"; };
 		1994AF311E71E3870024103D /* Timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Timer.cpp; path = Model/Timer.cpp; sourceTree = "<group>"; };
 		1994AF321E71E3870024103D /* Timer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Timer.hpp; path = Model/Timer.hpp; sourceTree = "<group>"; };
@@ -131,6 +132,7 @@
 				19BC3B8C1E9D5B78005DBA73 /* BinarySearchTree.h */,
 				1919E4371EA7EEA9005182A9 /* AVLTree.hpp */,
 				19947A1E1EB7B24700973BEB /* HashTable.hpp */,
+				19947A211EB7B50D00973BEB /* HashNode.hpp */,
 			);
 			name = Model;
 			sourceTree = "<group>";
