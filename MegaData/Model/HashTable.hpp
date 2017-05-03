@@ -20,6 +20,7 @@ class HashTable
 private:
     long capacity;
     long size;
+    long getSize();
     double efficiencyPercentage;
     HashNode<Type> ** hashTableStorage;
     bool isPrime(long sampleNumber);
@@ -42,6 +43,13 @@ HashTable<Type> :: HashTable()
     this->efficiencyPercentage = .667;
     this->size = 0;
     this->hashTableStorage = HashNode<Type> * [capacity];
+    std :: fill_n(hashTableStorage, capacity, nullptr);
+}
+
+template<class Type>
+long HashTable<Type> :: getSize()
+{
+    return size;
 }
 
 template<class Type>
@@ -128,6 +136,78 @@ void HashTale<Type> :: displayContents()
         {
             cout << index << ": " << hashTable[index]->getData() << endl;
         }
+    }
+}
+
+template<class Type>
+bool HashTable<Type> :: remove(Type data)
+{
+    bool removed = false;
+    
+    HashNode<Type> * find(data);
+    long hashIndex = findPosition(find);
+    
+    if(hashTableStorage[hashIndex] != nullptr)
+    {
+        hashTableStorage[hashIndex] = nullptr;
+        removed = true;
+        this->size--;
+    }
+    
+    return removed;
+}
+
+template<class Type>
+void HashTable<Type> :: resize()
+{
+    long updatedCapacity = nextPrime();
+    HashNode<Type> ** tempStorage = new HashNode<Type> * [updatedCapacity];
+    
+    std :: fill_n(tempStorage, updatedCapacity, nullptr);
+    
+    long oldCapacity = this->capacity;
+    this->capacity = updatedCapacity;
+    
+    for(long index = 0; index < oldapacity; index++)
+    {
+        if(hashTableStorage[index] != nullptr)
+        {
+            long position = findPosition(temp);
+            if(tempStorage[position] == nullptr)
+            {
+                tempStorage[position] = temp;
+            }
+            else
+            {
+                long updatePosition = handleCollision(temp, position);
+                tempStorage[updatedPosition] = temp;
+            }
+        }
+    }
+    
+    hashTableStorage = tempStorage;
+}
+
+template<class Type>
+void HashTable<Type> :: add(Type data)
+{
+    this->size++;
+    if(((this->size * 1.000) / this->capacity) > this->efficiencyPercentage)
+    {
+        resize();
+    }
+    
+    HashNode<Type> * temp= new HashNode<Type>(data);
+    long index = findPosition(temp);
+    
+    if(hashTableStorage[index] == nullptr)
+    {
+        hashTableStorage[index] = temp;
+    }
+    else
+    {
+        long updatedPosition= handleCollision(temp, index);
+        hashTableStorage[updatedPosition] = temp;
     }
 }
 #endif /* HashTable_h */
