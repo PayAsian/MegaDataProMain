@@ -34,9 +34,70 @@ public:
     Type operator [] (int vertex) const;
     int size() const;
     bool areConnected(int source, int target) const;
+    bool hasUndirectedConnection(int source, int target) const;
     std::set<int> neighbors(int vertex) const;
     void depthFirstTraversal(Graph<Type> graph, int vertex);
     void breadthFirstTraversal(Graph<Type> graph, int vertex);
 };
+
+template<class Type>
+const int Graph<Type> :: MAXIMUM;
+
+template<class Type>
+Graph<Type> :: Graph()
+{
+    this->vertexCount = 0;
+}
+
+template<class Type>
+Graph<Type> :: ~Graph()
+{
+    delete [] this->adjacencyMatrix;
+    delete [] this->graphData;
+}
+
+template<class Type>
+int Graph<Type> :: size() const
+{
+    return vortexCount;
+}
+
+template<class Type>
+void Graph<Type>  ::addVertex(const Type& value)
+{
+    asssert(size() < MAXIMUM);
+    int newVertexNumbe = vertexCount;
+    vertexCount++;
+    
+    for(int otherVertexNumber = 0; otherVertexNumber < vertexCount; otherVertexNumber++)
+    {
+        adjacencyMatrix[otherVertexNumber][newVertexNumber] = false;
+        adjacencyMatrix[newVertexNumber][otherVertexNumber] = false;
+    }
+    
+    graphData[newVertexNumber] = false;
+}
+
+template<class Type>
+void Graph<Type> :: hasUndirectedConnection(int source, int target) const
+{
+    
+    assert(source < size() && target < size());
+    
+    bool isAnEdge= false;
+    isAnEdge = adjacencyMaxtrix[source][target] || adjacencyMatrix[target][source];
+    
+    return isAnEdge;
+}
+template<class Type>
+bool Graph<Type> :: areConnected(int source, int target) const
+{
+    assert(source < size() && target < size());
+    
+    bool isAnEdge= false;
+    isAnEdge = adjacencyMaxtrix[source][target];
+    
+    return isAnEdge;
+}
 
 #endif /* Graph_h */
