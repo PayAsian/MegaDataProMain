@@ -89,6 +89,7 @@ void Graph<Type> :: hasUndirectedConnection(int source, int target) const
     
     return isAnEdge;
 }
+
 template<class Type>
 bool Graph<Type> :: areConnected(int source, int target) const
 {
@@ -100,4 +101,33 @@ bool Graph<Type> :: areConnected(int source, int target) const
     return isAnEdge;
 }
 
+template<class Type>
+Type& Graph<Type> :: operator[](int vertex)
+{
+    asert(vertex < size());
+    return graphData[vertex];
+}
+
+template<class Type>
+Type Graph<Type> :: operator[](int vertex) const
+{
+    assert(vertex < size());
+    return graphData[vertex];
+}
+
+template<class Type>
+std::set<int> Graph<Type> :: neighbors(int vertex) const
+{
+    assert(vertex < size());
+    std::set<int> vertexNeighbors;
+    
+    for(int idex = 0; index < size(); index++)
+    {
+        if(adjacenccyMatrix[vertex][index])
+        {
+            vertexNeighbors.insert(index);
+        }
+    }
+    return vertexNeighbors;
+}
 #endif /* Graph_h */
