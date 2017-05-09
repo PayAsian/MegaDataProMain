@@ -38,6 +38,7 @@
 		1919E4371EA7EEA9005182A9 /* AVLTree.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = AVLTree.hpp; path = Model/AVLTree.hpp; sourceTree = "<group>"; };
 		1922DBB31E6A04B000F8B73B /* Queue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Queue.h; path = Model/Queue.h; sourceTree = "<group>"; };
 		1948B5831E5CD99800CD82D5 /* List.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = List.h; path = Model/List.h; sourceTree = "<group>"; };
+		194E06ED1EC234EF00CB228B /* Graph.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Graph.hpp; path = Model/Graph.hpp; sourceTree = "<group>"; };
 		1955086C1E64C74C00B97922 /* BiDirectionalNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BiDirectionalNode.h; path = Model/BiDirectionalNode.h; sourceTree = "<group>"; };
 		198FD6901E6F4ACC00BA93FC /* Stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Stack.h; path = Model/Stack.h; sourceTree = "<group>"; };
 		19947A1E1EB7B24700973BEB /* HashTable.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = HashTable.hpp; path = Model/HashTable.hpp; sourceTree = "<group>"; };
@@ -151,6 +152,7 @@
 		19F74AFA1E8C2AB700ACD4A4 /* ItemsToSave */ = {
 			isa = PBXGroup;
 			children = (
+				194E06ED1EC234EF00CB228B /* Graph.hpp */,
 				19F74AFB1E8C2B3C00ACD4A4 /* CrimeData.cpp */,
 				19F74AFC1E8C2B3C00ACD4A4 /* CrimeData.hpp */,
 				19ACC4261E7711E200D5EEE1 /* FoodItem.cpp */,
