@@ -20,6 +20,7 @@ class Graph
 private:
     static const int MAXIMUM = 20;
     bool adjacencyMatrix [MAXIMUM][MAXIMUM];
+    Type graphData[MAXIMUM];
     int vertexCount;
     void depthFirstTraversal(Graph<Type> graph, int vertex, bool markedVertices[]);
     
@@ -31,7 +32,7 @@ public:
     void addEdge(int source, int target);
     void removeEdge(int source, int target);
     void addEdgeUndirected(int source, int target);
-    void addremoveEdgeUndirected(itn source, int target);
+    void addremoveEdgeUndirected(int source, int target);
     Type& operator[] (int vertex);
     Type operator [] (int vertex) const;
     int size() const;
@@ -54,21 +55,20 @@ Graph<Type> :: Graph()
 template<class Type>
 Graph<Type> :: ~Graph()
 {
-    delete [] this->adjacencyMatrix;
-    delete [] this->graphData;
+    
 }
 
 template<class Type>
 int Graph<Type> :: size() const
 {
-    return vortexCount;
+    return vertexCount;
 }
 
 template<class Type>
 void Graph<Type>  ::addVertex(const Type& value)
 {
     asssert(size() < MAXIMUM);
-    int newVertexNumbe = vertexCount;
+    int newVertexNumber = vertexCount;
     vertexCount++;
     
     for(int otherVertexNumber = 0; otherVertexNumber < vertexCount; otherVertexNumber++)
@@ -77,17 +77,17 @@ void Graph<Type>  ::addVertex(const Type& value)
         adjacencyMatrix[newVertexNumber][otherVertexNumber] = false;
     }
     
-    graphData[newVertexNumber] = false;
+    graphData[newVertexNumber] = value;
 }
 
 template<class Type>
-void Graph<Type> :: hasUndirectedConnection(int source, int target) const
+bool Graph<Type> :: hasUndirectedConnection(int source, int target) const
 {
     
     assert(source < size() && target < size());
     
     bool isAnEdge= false;
-    isAnEdge = adjacencyMaxtrix[source][target] || adjacencyMatrix[target][source];
+    isAnEdge = adjacencyMatrix[source][target] || adjacencyMatrix[target][source];
     
     return isAnEdge;
 }
@@ -98,7 +98,7 @@ bool Graph<Type> :: areConnected(int source, int target) const
     assert(source < size() && target < size());
     
     bool isAnEdge= false;
-    isAnEdge = adjacencyMaxtrix[source][target];
+    isAnEdge = adjacencyMatrix[source][target];
     
     return isAnEdge;
 }
@@ -123,9 +123,9 @@ std::set<int> Graph<Type> :: neighbors(int vertex) const
     assert(vertex < size());
     std::set<int> vertexNeighbors;
     
-    for(int idex = 0; index < size(); index++)
+    for(int index = 0; index < size(); index++)
     {
-        if(adjacenccyMatrix[vertex][index])
+        if(adjacencyMatrix[vertex][index])
         {
             vertexNeighbors.insert(index);
         }
@@ -137,7 +137,7 @@ template<class Type>
 void Graph<Type> :: removeEdge(int source, int target)
 {
     assert(source < size() && target < size());
-    adjecencyMatrix[sourcce][target] = false;
+    adjacencyMatrix[source][target] = false;
 }
 
 template<class Type>
@@ -152,8 +152,8 @@ void Graph<Type> :: depthFirstTraversal(Graph<Type> currentGraph, int vertex)
 {
     bool visitedVerticies[MAXIMUM];
     assert(vertex < currentGraph.size());
-    std::fill_n(visitedVertices, currentGraph.size(), false);
-    depthFirstTraversal(currentGraph, vertx, visitedVertices);
+    std::fill_n(visitedVerticies, currentGraph.size(), false);
+    depthFirstTraversal(currentGraph, vertex, visitedVerticies);
 }
 
 template<class Type>
@@ -165,11 +165,11 @@ void Graph<Type> :: depthFirstTraversal(Graph<Type> currentGraph, int vertex, bo
     visited[vertex] = true;
     cout << currentGraph[vertex] << ", " << endl;
     
-    for(setIterator = conections.begin(); setIterator != connecions.end(); setIterator++)
+    for(setIterator = connections.begin(); setIterator != connections.end(); setIterator++)
     {
-        if(!vissited[*setIterator])
+        if(!visited[*setIterator])
         {
-            depthFirstTraversal(currentGraph, *setIteratoor, visited);
+            depthFirstTraversal(currentGraph, *setIterator, visited);
         }
     }
 }
@@ -188,7 +188,7 @@ void Graph<Type> :: breadthFirstTraversal(Graph<Type> currentGraph, int vertex)
     visited[vertex] = true;
     cout << currentGraph[vertex] << endl;
     vertexQueue.push(vertex);
-    while(!vertexQueue.empty();)
+    while(!vertexQueue.empty())
     {
         connections = currentGraph.neighbors(vertexQueue.front());
         vertexQueue.pop();

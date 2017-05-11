@@ -26,7 +26,7 @@ private:
     BinarySearchTreeNode<Type> * insertNode(BinarySearchTreeNode<Type> * parent, Type inserted);
     BinarySearchTreeNode<Type> * removeNode(BinarySearchTreeNode<Type>  * parent, Type inserteds);
     
-    int heightDifferencce(BinarySearchTreeNode<Type> * parent);
+    int heightDifference(BinarySearchTreeNode<Type> * parent);
     
 public:
     AVLTree();
@@ -40,7 +40,7 @@ public:
  A negative value mean the right is greater than the left
  */
 template<class Type>
-int AVLTree<Type> :: heightDifferencce(BinarySearchTreeNode<Type> * node)
+int AVLTree<Type> :: heightDifference(BinarySearchTreeNode<Type> * node)
 {
     int balance;
     int leftHeight = this->calculateHeight(node->getLeftChild());
@@ -100,11 +100,11 @@ BinarySearchTreeNode<Type> * AVLTree<Type> :: leftRightRotation(BinarySearchTree
 template<class Type>
 BinarySearchTreeNode<Type> * AVLTree<Type> :: balanceSubTree(BinarySearchTreeNode<Type> * parent)
 {
-    int balanceFactor = heightDifferencce(parent);
+    int balanceFactor = heightDifference(parent);
     
     if(balanceFactor > 1)
     {
-        if(heightDifferenccee(parent->getLeftChild()) > 0)
+        if(heightDifference(parent->getLeftChild()) > 0)
         {
             parent = leftRotation(parent);
         }
@@ -150,7 +150,7 @@ BinarySearchTreeNode<Type> * AVLTree<Type> :: insertNode(BinarySearchTreeNode<Ty
     }
     else if(inserted < parent->getNodeData())
     {
-        parent->setLeftChild(insertedNode(parent->getLeftChild(), inserted));
+        parent->setLeftChild(insertNode(parent->getLeftChild(), inserted));
         parent = balanceSubTree(parent);
     }
     else if(inserted > parent->getNodeData())

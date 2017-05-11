@@ -32,7 +32,7 @@ HashNode<Type> :: HashNode()
 }
 
 template<class Type>
-HashnNode<Type> :: HashNode(Type data)
+HashNode<Type> :: HashNode(Type data)
 {
     this->key = rand();
     this->data = data;

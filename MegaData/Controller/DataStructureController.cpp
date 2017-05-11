@@ -58,87 +58,87 @@ void DataStructureController :: testIntArray()
         cout << temp.getFromIndex(index) << " is at spot " << index << endl;
     }
 }
-    void DataStructureController :: testListIntro()
+void DataStructureController :: testListIntro()
+{
+    List<int> sample;
+    sample.addFront(2);
+    sample.addEnd(3);
+    sample.addFront(1);
+    
+    for(int index = 0; index < sample.getSize(); index++ )
     {
-        List<int> sample;
-        sample.addFront(2);
-        sample.addEnd(3);
-        sample.addFront(1);
-        
-        for(int index = 0; index < sample.getSize(); index++ )
-        {
-            cout << sample.getFromIndex(index) << endl;
-            cout << sample.remove(1) << endl;
-        }
-        
-        cout << "Size should read 3 and is " << sample.getSize() << endl;
+        cout << sample.getFromIndex(index) << endl;
+        cout << sample.remove(1) << endl;
     }
     
-    void DataStructureController :: testListTiming()
+    cout << "Size should read 3 and is " << sample.getSize() << endl;
+}
+
+void DataStructureController :: testListTiming()
+{
+    DoubleList<int> timingList;
+    Timer totalTimer;
+    for(int index = 0; index < 10000; index++)
     {
-        DoubleList<int> timingList;
-        Timer totalTimer;
-        for(int index = 0; index < 10000; index++)
-        {
-            timingList.add(rand());
-        }
-        Timer doubleTimer;
-        long slowTime [1000];
-        long fastTime [1000];
-        double averageSlow = 0.00, averageFast = 0.00;
+        timingList.add(rand());
+    }
+    Timer doubleTimer;
+    long slowTime [1000];
+    long fastTime [1000];
+    double averageSlow = 0.00, averageFast = 0.00;
+    
+    for(int index = 0; index < 1000; index++)
+    {
+        int randomIndex = rand() % 10000;
+        doubleTimer.startTimer();
+        timingList.getFromIndex(randomIndex);
+        doubleTimer.stopTimer();
+        slowTime[index] = doubleTimer.getExecutionTimeInMicroseconds();
+        doubleTimer.resetTimer();
         
-        for(int index = 0; index < 1000; index++)
-        {
-            int randomIndex = rand() % 10000;
-            doubleTimer.startTimer();
-            timingList.getFromIndex(randomIndex);
-            doubleTimer.stopTimer();
-            slowTime[index] = doubleTimer.getExecutionTimeInMicroseconds();
-            doubleTimer.resetTimer();
-            
-            doubleTimer.startTimer();
-            timingList.getFromIndexFast(randomIndex);
-            doubleTimer.stopTimer();
-            fastTime[index] = doubleTimer.getExecutionTimeInMicroseconds();
-            doubleTimer.resetTimer();
-            
-            averageSlow += slowTime[index];
-            averageFast += fastTime[index];
-        }
+        doubleTimer.startTimer();
+        timingList.getFromIndexFast(randomIndex);
+        doubleTimer.stopTimer();
+        fastTime[index] = doubleTimer.getExecutionTimeInMicroseconds();
+        doubleTimer.resetTimer();
         
-        averageSlow = averageSlow/1000.00;
-        averageFast = averageFast/1000.00;
-        totalTimer.stopTimer();
-        
-        cout << "The average speed for the getFromIndex method was: " << averageSlow << " microseconds. " << endl;
-        cout << "The average speed forthe getFromIndexFas method was:" << averageFast << " microseconds." << endl;
-        
-        cout << "A time savings?? of: " << averageSlow - averageFast << " microseconds. " << endl;
-        
-        totalTimer.displayTimerInformation();
-            
+        averageSlow += slowTime[index];
+        averageFast += fastTime[index];
     }
     
-    void DataStructureController :: testFoodQueue()
-    {
-        Queue<FoodItem> tastyFood;
-        FoodItem szechwan("spicy chinese dish");
-        
-        tastyFood.enqueue(szechwan);
-        FoodItem boring;
-        
-        FoodItem removed = tastyFood.dequeue();
-        cout << "The item removed from the queue was: " << removed.getFoodName() << " and should be: " << endl;
-    }
+    averageSlow = averageSlow/1000.00;
+    averageFast = averageFast/1000.00;
+    totalTimer.stopTimer();
     
-    void DataStructureController :: testIntStack()
-    {
-        Stack<int> numberStack;
-        numberStack.add(2315);
-        numberStack.push(32);
-        int testValue = numberStack.pop();
-        cout << "Test value is " << testValue << " and should be 32 " << endl;
-    }
+    cout << "The average speed for the getFromIndex method was: " << averageSlow << " microseconds. " << endl;
+    cout << "The average speed forthe getFromIndexFas method was:" << averageFast << " microseconds." << endl;
+    
+    cout << "A time savings?? of: " << averageSlow - averageFast << " microseconds. " << endl;
+    
+    totalTimer.displayTimerInformation();
+    
+}
+
+void DataStructureController :: testFoodQueue()
+{
+    Queue<FoodItem> tastyFood;
+    FoodItem szechwan("spicy chinese dish");
+    
+    tastyFood.enqueue(szechwan);
+    FoodItem boring;
+    
+    FoodItem removed = tastyFood.dequeue();
+    cout << "The item removed from the queue was: " << removed.getFoodName() << " and should be: " << endl;
+}
+
+void DataStructureController :: testIntStack()
+{
+    Stack<int> numberStack;
+    numberStack.add(2315);
+    numberStack.push(32);
+    int testValue = numberStack.pop();
+    cout << "Test value is " << testValue << " and should be 32 " << endl;
+}
 
 void DataStructureController :: testBinarySearchTreeOperations()
 {
@@ -165,10 +165,10 @@ void DataStructureController :: testBinarySearchTreeOperations()
 
 void DataStructureController :: testBinarySearchData()
 {
-    FileController fileData;
+    DataStructureController fileData;
     Timer treeTimer;
     treeTimer.startTimer();
-    BinarySearchTree<fileData> crimeTree = fileData.readCrimeDataToBinarySearchTree("/Users/cody.henrichsen/Documents/crimes.csv");
+    BinarySearchTree<fileData> crimeTree = fileData.readCrimeDataToBinarySearchTree("/Users/ptre8426/Documents/crime.csv");
     treeTimer.stopTimer();
     
     int count = crimeTree.getSize();
@@ -203,16 +203,16 @@ void DataStructureController :: testAVLTreeOperations()
     
     cout << "Size should be 8 and is: " << numbers.getSize() << endl;
     cout << "In order traversal should be: \n\t-45677654 \n\t-123 \n\t10 \n\t43 \n\t9843 \n\t23465 \n\t43243 \n\t92165" << endl;
-
+    
     numbers.inOrderTraversal();
     
     cout << "Height should be 4 and is: " << numbers.getHeight() << endl;
     cout << "Balanced should be true || 1 and is: " << numbers.isBalanced() << endl;
 }
-    
+
 void DataStructureController :: testAVLData()
 {
-    FileController fileData;
+    DataStructureController fileData;
     Timer treeTimer;
     treeTimer.startTimer();
     AVLTree<fileData> crimeTree = fileData.readCrimeDataToAVLTree("/Users/cody.henrichsen/Documents/crimes.csv");
@@ -231,7 +231,7 @@ void DataStructureController :: testAVLData()
     
 }
 
-BinarySearchTree<CrimeData> FileController :: readCrimeDataToBinarySearchTree(string filename)
+BinarySearchTree<CrimeData> DataStructureController :: readCrimeDataToBinarySearchTree(string filename)
 {
     BinarySearchTree<CrimeData> crimeData;
     string currentCSVLine;
@@ -259,7 +259,7 @@ BinarySearchTree<CrimeData> FileController :: readCrimeDataToBinarySearchTree(st
     {
         cerr << "NO FILE" << endl;
     }
-     return crimeData;
+    return crimeData;
 }
 
 CrimeData :: CrimeData(string currentCSVLine)
@@ -323,7 +323,7 @@ ostream & operator << (ostream &outputStream, const CrimeData & outputData)
     return outputStream << outputData.getDepartment() << "had " << outputData.getAllViolentRates() << " in year: " << outputData.getYear();
 }
 
-AVLTree<CrimeData> FileController :: readCrimeDataToAVLTree(string filename)
+AVLTree<CrimeData>DataStructureController :: readCrimeDataToAVLTree(string filename)
 {
     AVLTree<CrimeData> crimeData;
     string currentCSVLine;

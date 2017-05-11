@@ -23,6 +23,8 @@
 #include "../Model/BinarySearchTreeNode.h"
 #include "../Model/Tree.h"
 #include "../Model/AVLTree.hpp"
+#include "../Model/Graph.hpp"
+#include "../Model/CrimeData.hpp"
 #include <string>
 
 using namespace std;
@@ -41,7 +43,7 @@ private:
     void testBinarySearchTreeOperations();
     void testBinarySearchData();
     void testAVLTreeOperations();
-    void AVLData();
+    void testAVLData();
     
     
     
