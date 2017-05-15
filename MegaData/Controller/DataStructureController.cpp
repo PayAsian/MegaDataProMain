@@ -35,6 +35,39 @@ void DataStructureController :: start()
     cout << "Finished testing" << endl;
 }
 
+BinarySearchTree<CrimeData> DataStructureController :: readCrimeDataToBinarySearchTree(string filename)
+{
+    BinarySearchTree<CrimeData> crimeData;
+    string currentCSVLine;
+    int rowCount = 0;
+    ifstream dataFile(filename);
+    
+    if(dataFile.is_open())
+    {
+        while(!dataFile.eof())
+        {
+            getline(dataFile, currentCSVLine, '\r');
+            
+            //Exclude first row headers
+            if(rowCount != 0)
+            {
+                CrimeData rowData(currentCSVLine);
+                crimeData.insert(rowData);
+            }
+            rowCount++;
+        }
+        dataFile.close();
+    }
+    
+    else
+    {
+        cerr << "NO FILE" << endl;
+    }
+    return crimeData;
+}
+
+
+
 void DataStructureController :: testIntArray()
 {
     cout << "Testing the array" << endl;
@@ -168,7 +201,7 @@ void DataStructureController :: testBinarySearchData()
     DataStructureController fileData;
     Timer treeTimer;
     treeTimer.startTimer();
-    BinarySearchTree<fileData> crimeTree = fileData.readCrimeDataToBinarySearchTree("/Users/ptre8426/Documents/crime.csv");
+    BinarySearchTree<CrimeData> crimeTree = fileData.readCrimeDataToBinarySearchTree("/Users/ptre8426/Documents/crime.csv");
     treeTimer.stopTimer();
     
     int count = crimeTree.getSize();
@@ -215,7 +248,7 @@ void DataStructureController :: testAVLData()
     DataStructureController fileData;
     Timer treeTimer;
     treeTimer.startTimer();
-    AVLTree<fileData> crimeTree = fileData.readCrimeDataToAVLTree("/Users/cody.henrichsen/Documents/crimes.csv");
+    AVLTree<CrimeData> crimeTree = fileData.readCrimeDataToAVLTree("/Users/ptre8426/Documents/crime.csv");
     treeTimer.stopTimer();
     
     int count = crimeTree.getSize();
@@ -229,37 +262,6 @@ void DataStructureController :: testAVLData()
     
     treeTimer.displayTimerInformation();
     
-}
-
-BinarySearchTree<CrimeData> DataStructureController :: readCrimeDataToBinarySearchTree(string filename)
-{
-    BinarySearchTree<CrimeData> crimeData;
-    string currentCSVLine;
-    int rowCount = 0;
-    ifstream dataFile(filename);
-    
-    if(dataFile.is_open())
-    {
-        while(!dataFile.eof())
-        {
-            getline(dataFile, currentCSVLine, '\r');
-            
-            //Exclude first row headers
-            if(rowCount != 0)
-            {
-                CrimeData rowData(currentCSVLine);
-                crimeData.insert(rowData);
-            }
-            rowCount++;
-        }
-        dataFile.close();
-    }
-    
-    else
-    {
-        cerr << "NO FILE" << endl;
-    }
-    return crimeData;
 }
 
 CrimeData :: CrimeData(string currentCSVLine)

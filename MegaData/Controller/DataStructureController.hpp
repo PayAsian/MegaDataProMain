@@ -25,6 +25,9 @@
 #include "../Model/AVLTree.hpp"
 #include "../Model/Graph.hpp"
 #include "../Model/CrimeData.hpp"
+#include "../Model/HashNode.hpp"
+#include "../Model/HashTable.hpp"
+#include <fstream>
 #include <string>
 
 using namespace std;
@@ -49,6 +52,7 @@ private:
     
 public:
     DataStructureController();
+    BinarySearchTree<CrimeData> readCrimeDataToBinarySearchTree(string filename);
     void start();
     
 };
