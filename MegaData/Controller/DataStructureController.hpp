@@ -53,6 +53,7 @@ private:
 public:
     DataStructureController();
     BinarySearchTree<CrimeData> readCrimeDataToBinarySearchTree(string filename);
+    AVLTree<CrimeData> readCrimeDataToAVLTree(string filename);
     void start();
     
 };
