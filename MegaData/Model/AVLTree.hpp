@@ -144,7 +144,47 @@ AVLTree<Type> :: AVLTree() : BinarySearchTree<Type>()
 template<class Type>
 BinarySearchTreeNode<Type> * AVLTree<Type> :: removeNode(BinarySearchTreeNode<Type> * parent, Type inserted)
 {
-    return nullptr;
+    if(parent == nullptr)
+    {
+        return parent;
+    }
+    if(inserted < parent->getNodeData())
+    {
+        parent->setLeftChild(removeNode(parent->getLeftChild(), inserted));
+    }
+    else if(inserted > parent->getNodeData())
+    {
+        parent->setRightChild(removeNode(parent->getRightChild(), inserted));
+    }
+    else
+    {
+        BinarySearchTreeNode<Type> * temp;
+        if(parent->getLeftChild() == nullptr && parent->getRightChild() == nullptr)
+        {
+            temp = parent;
+            delete temp;
+        }
+        else if(parent->getLeftChild() == nullptr)
+        {
+            *parent = *parent->getRightChild();
+        }
+        else if(parent->getRightChild() == nullptr)
+        {
+            *parent = *parent->getLeftChild();
+        }
+        else
+        {
+            BinarySearchTreeNode<Type> * leftMost = this->getLeftChild(parent->getRightChild());
+            parent->setNodeData(leftMost->getNodeData());
+            parent->setRightChild(removeNode(parent->getRightChild(), leftMost->getNodeData()));
+        }
+    }
+    if(parent == nullptr)
+    {
+        return parent;
+    }
+    
+    return balanceSubTree(parent);
 }
 
 template<class Type>
